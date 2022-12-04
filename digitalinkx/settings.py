@@ -12,14 +12,17 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-import environ
-env = environ.Env()
-environ.Env.read_env()
+# import environ
+# env = environ.Env()
+# environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = env('SECRET_KEY')
+# SECRET_KEY = env('SECRET_KEY')
+
+SECRET_KEY = 'django-insecure-9d)mb6a)!cv*sc2!bmr#x_67q&ujm*#6uih@0sb)bdp)8a5!94'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -28,8 +31,8 @@ SECRET_KEY = env('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = env('DEBUG')
+DEBUG = True
+# DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -101,11 +104,12 @@ WSGI_APPLICATION = 'digitalinkx.wsgi.application'
 DATABASES ={
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DB_NAME'),
+        # 'NAME': env('DB_NAME'),
+        'NAME': 'digitalinkx',
         'HOST': 'localhost',
         'PORT': '3306',
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
+        'USER': 'blaq',
+        'PASSWORD': '518Oloko',
     }
 }
 
@@ -140,8 +144,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR, env('MEDIA_ROOT'))
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+# MEDIA_ROOT = os.path.join(BASE_DIR, env('MEDIA_ROOT'))
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
  
 #auth
