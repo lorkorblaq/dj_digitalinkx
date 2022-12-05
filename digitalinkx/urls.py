@@ -28,8 +28,8 @@ urlpatterns =[
     path('accounts/', include('allauth.urls')),
     path("", include('index.urls', namespace='index')),
 
-    path('userz/', include('userz.urls')),
-    path('userz/', include('django.contrib.auth.urls')),
+    # path('userz/', include('userz.urls')),
+    # path('userz/', include('django.contrib.auth.urls')),
     path('api/', include(router.urls)),
     ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
